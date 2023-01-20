@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>O quão gay você é??</h1>
+    <p style="text-align: center;">A resposta pode te surpreender</p>
+    <div>   
+        Você já dormiu com um amigo?
+        <p>
+            <input type="radio" name="option" id="sim" checked>
+            <label for="sim">Sim</label>
+            <input type="radio" name="option" id="nao">
+            <label for="nao">Não</label>
+        </p>
+        <br>
+        Você já beijou algum amigo?
+        <p>
+            <input type="radio" name="option2" id="sim" checked>
+            <label for="sim">Sim</label>
+            <input type="radio" name="option2" id="não">
+            <label for="não">Não</label>
+        </p>
+        <br>
+        Você já mamou algum amigo?
+        <p>
+            <input type="radio" name="option3" id="sim" checked>
+            <label for="sim">Sim</label>
+            <input type="radio" name="option3" id="não">
+            <label for="não">Não</label>
+        </p>
+        <br>
+        <input type="button" value="Finalizar" onclick="fim()">
+        <br>
+        <p id="res"></p>
+    </div>  
+    <script>
+    
+    function fim(){
+    var op = document.getElementsByName('option')
+    var option2 = document.getElementsByName('option2')
+    var option3 = document.getElementsByName('option3')
+    var res = document.getElementById('res')
+    if(op[0].checked){
+        if(option2[0].checked){
+            if(option3[0].checked){
+                res.innerHTML = `Muitoooo gay`
+            }else if(option3[1].checked){
+                res.innerHTML = `Bem gay`
+            }
+        }else if (option2[1].checked){
+            if(option3[0].checked){
+                res.innerHTML = `Bem gay`
+            }else if(option3[1].checked){
+                res.innerHTML = `Pouco gay`
+            }
+        }
+    
+    
+    }else if(op[1].checked){
+        if(option2[0].checked){
+            if(option3[0].checked){
+                res.innerHTML = `Bem gay`
+            }else if(option3[1].checked){
+                res.innerHTML = `Pouco gay`
+            }
+        }else if(option2[1].checked){
+            if(option3[0].checked){
+                res.innerHTML = `Porque vc mamou seu amigo cara?`
+            }else if(option3[1].checked){
+                res.innerHTML = `1% gay`
+            }
+        }
+
+    }
+}
+    </script>
+     
+</body>
+</html>
